@@ -6,8 +6,8 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, '..', './lib'),
-        filename: 'back-top.js',
-        library: 'back-top',
+        filename: 'input.js',
+        library: 'input',
         libraryTarget: 'umd'
     },
     externals: {
