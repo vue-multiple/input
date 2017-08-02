@@ -1,0 +1,151 @@
+
+.vm-input {
+  position: relative;
+  font-size: @font-size-base;
+  display: inline-block;
+
+  &__inner {
+    appearance: none;
+    background-color: @input-fill;
+    background-image: none;
+    border-radius: @input-border-radius;
+    border: @input-border;
+    box-sizing: border-box;
+    color: @input-color;
+    display: inline-block;
+    font-size: inherit;
+    height: @input-height;
+    line-height: 1;
+    outline: none;
+    padding: 3px 10px;
+    transition: @border-transition-base;
+    width: @input-width;
+
+    &::placeholder {
+      color: @input-placeholder-color;
+    }
+
+    &:hover {
+      border-color: @input-hover-border;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: @input-focus-border;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    width: 35px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    text-align: center;
+    color: @input-icon-color;
+    transition: all .3s;
+
+    &:after {
+      content: '';
+      height: 100%;
+      width: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    & + .vm-input__inner {
+      padding-right: 35px;
+    }
+
+    &.clickable {
+      &:hover {
+        cursor: pointer;
+        color: @input-hover-border;
+
+        & + .vm-input__inner {
+          border-color: @input-hover-border;
+        }
+      }
+    }
+  }
+
+  &.active {
+    .el-input__inner {
+      outline: none;
+      border-color: @input-focus-border;
+    }
+  }
+  &.disabled {
+    .vm-input__inner {
+      background-color: @input-disabled-fill;
+      border-color: @input-disabled-border;
+      color: @input-disabled-color;
+      cursor: not-allowed;
+
+      &::placeholder {
+        color: @input-disabled-placeholder-color;
+      }
+    }
+  }
+}
+
+vm-input-group {
+  line-height: normal;
+  display: inline-table;
+  width: 100%;
+  border-collapse: separate;
+
+  & > .vm-input__inner {
+    vertical-align: middle;
+    display: table-cell;
+  }
+}
+
+.vm-textarea {
+  display: inline-block;
+  width: 100%;
+  vertical-align: bottom;
+
+  &__inner {
+    display: block;
+    resize: vertical;
+    padding: 5px 7px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: @font-size-base;
+    color: @input-color;
+    background-color: @input-fill;
+    background-image: none;
+    border: @input-border;
+    border-radius: @input-border-radius;
+    transition: @border-transition-base;
+
+    &::placeholder {
+      color: @input-placeholder-color;
+    }
+
+    &:hover {
+      border-color: @input-hover-border;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: @input-focus-border;
+    }
+  }
+
+  &.disabled {
+    .vm-textarea__inner {
+      background-color: @input-disabled-fill;
+      border-color: @input-disabled-border;
+      color: @input-disabled-color;
+      cursor: not-allowed;
+
+      &::placeholder {
+        color: @input-disabled-placeholder-color;
+      }
+    }
+  }
+}
+
