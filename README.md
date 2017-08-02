@@ -1,6 +1,6 @@
 # input
 
-> Vue-based back-top component
+> Vue-based input component
 
 ## Install
 
@@ -17,7 +17,7 @@ import VmInput from 'vue-multiple-input'
 Vue.component(VmInput.name, VmInput)
 ```
 
-For more information, please refer to [back-top](http://vue-multiple.github.io/input) in our documentation.
+For more information, please refer to [input](http://vue-multiple.github.io/input) in our documentation.
 
 ## Build Setup
 
