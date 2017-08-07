@@ -7,6 +7,17 @@
   ]" :style="inputStyle"
   >
     <template v-if="type !== 'textarea'">
+      <!-- input 图标 -->
+      <slot name="icon">
+        <i class="vm-input__icon"
+           :class="[
+            icon,
+            onIconClick ? 'clickable' : ''
+          ]"
+           v-if="icon"
+           @click="handleIconClick">
+        </i>
+      </slot>
       <input
         v-if="type !== 'textarea'"
         class="vm-input__inner"
@@ -62,6 +73,7 @@
       readonly: Boolean,
       autowidth:Boolean,
       autofocus: Boolean,
+      icon: String,
       disabled: Boolean,
       inputclass: String,
       type: {
@@ -86,7 +98,8 @@
       minlength: Number,
       max: {},
       min: {},
-      step: {}
+      step: {},
+      onIconClick: Function
     },
 
     computed: {
@@ -130,6 +143,12 @@
         this.$emit('input', value);
         this.setCurrentValue(value);
         this.$emit('change', value);
+      },
+      handleIconClick(event) {
+          if (this.onIconClick) {
+              this.onIconClick(event);
+          }
+          this.$emit('click', event);
       },
       handleEnter(event){
           this.$emit('enter', event);

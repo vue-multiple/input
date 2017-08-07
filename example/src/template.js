@@ -25,6 +25,28 @@ export default {
   }
 }
 </script>`
+
+export const sourcecode5 = `<vm-input 
+  v-model="input2" 
+  placeholder="请输入内容" 
+  icon="vm-icon-search" 
+  :onIconClick="handleIconClick">
+</vm-input>
+
+<script>
+export default {
+  data() {
+    return {
+      input2: ''
+    }
+  },
+  methods:{
+    handleIconClick(e){
+      console.log(e)
+    }
+  }
+}
+</script>`
 export const sourcecode3 = `<vm-input
   type="textarea"
   :rows="2"

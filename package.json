@@ -1,7 +1,7 @@
 {
-  "name": "template",
-  "description": "Vue-based test-template component",
-  "version": "1.0.0",
+  "name": "vue-multiple-input",
+  "description": "Vue-based input component",
+  "version": "1.0.1",
   "author": "vue-multiple",
   "main": "lib/input.js",
   "files": [

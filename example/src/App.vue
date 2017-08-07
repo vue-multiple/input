@@ -40,6 +40,22 @@
             </template>
         </demonstration>
         <demonstration
+                title="带 icon 的输入框"
+                anchor="demo-code-title"
+                :highlight="sourcecode5">
+            <template slot="description">
+                带有图标标记输入类型
+            </template>
+            <template slot="source">
+                <div class="source">
+                    <vm-input v-model="input2" placeholder="请输入内容" icon="vm-icon-search" :onIconClick="handleIconClick"></vm-input>
+                </div>
+            </template>
+            <template slot="explanation">
+                可以通过 icon 属性在 input 组件尾部增加显示图标，可以通过 on-icon-click 钩子函数来在点击图标后执行需要的逻辑。
+            </template>
+        </demonstration>
+        <demonstration
                 title="文本域"
                 anchor="demo-code-title"
                 :highlight="sourcecode3">
@@ -148,6 +164,13 @@
                     <td>false</td>
                 </tr>
                 <tr>
+                    <td>icon</i></td>
+                    <td>输入框尾部图标</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
                     <td>rows</i></td>
                     <td>输入框行数，只对 type="textarea" 有效</td>
                     <td>number</td>
@@ -159,6 +182,13 @@
                     <td>自适应内容高度，只对 type="textarea" 有效，可传入对象，如，{ minRows: 2, maxRows: 6 }</td>
                     <td>boolean/object</td>
                     <td>—</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>autowidth</i></td>
+                    <td>宽度是否是100%</td>
+                    <td>boolean</td>
+                    <td>true, false</td>
                     <td>false</td>
                 </tr>
                 <tr>
@@ -217,6 +247,27 @@
                     <td>—</td>
                     <td>—</td>
                 </tr>
+                <tr>
+                    <td>inputclass</i></td>
+                    <td>input 类名,宽度100%需要autowidth属性配置，</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>inputclass</i></td>
+                    <td>input 类名,宽度100%需要autowidth属性配置，</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>on-icon-click</i></td>
+                    <td>点击 Input 内的图标的钩子函数</td>
+                    <td>function</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -259,13 +310,14 @@
 </template>
 
 <script type="es6">
-    import {sourcecode1, sourcecode2, sourcecode3, sourcecode4} from './template'
+    import {sourcecode1, sourcecode2, sourcecode3, sourcecode4, sourcecode5} from './template'
 
     export default {
         data () {
             return {
                 input: '',
                 input1: '',
+                input2: '',
                 textarea: '',
                 textarea2: '',
                 textarea3: '',
@@ -273,14 +325,19 @@
                 sourcecode2,
                 sourcecode3,
                 sourcecode4,
+                sourcecode5
             }
         },
         methods:{
+            handleIconClick(e){
+                console.log(e)
+            }
         }
     }
 </script>
 
 <style lang="less" type="text/less" rel="stylesheet/less">
+    @import "./styles/font.less";
     #app {
         margin: 60px auto;
     }
