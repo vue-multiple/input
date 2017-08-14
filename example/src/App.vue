@@ -255,13 +255,6 @@
                     <td>—</td>
                 </tr>
                 <tr>
-                    <td>inputclass</i></td>
-                    <td>input 类名,宽度100%需要autowidth属性配置，</td>
-                    <td>string</td>
-                    <td>—</td>
-                    <td>—</td>
-                </tr>
-                <tr>
                     <td>on-icon-click</i></td>
                     <td>点击 Input 内的图标的钩子函数</td>
                     <td>function</td>
